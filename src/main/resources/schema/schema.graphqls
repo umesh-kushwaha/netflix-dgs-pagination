@@ -1,0 +1,12 @@
+directive @connection on OBJECT
+
+type Video @connection{
+    id:Int!
+    title:String!
+    duration: Int!
+}
+
+
+type Query {
+    vidoes(first:Int, after:String): VideoConnection
+}
